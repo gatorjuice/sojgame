@@ -1,1 +1,107 @@
-test
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Scales of Justice</title>
+</head>
+
+<body onload="return ran_col()">
+    <div class="menu">
+        <div class="container-fluid">
+            <div class="row" id="mainbar">
+                <div class="col-xs-7">
+                    <h1>Scales of Justice</h1>
+                </div> 
+                <div class="col-xs-5">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Select Game <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/index.html">Deathmatch</a></li>
+                            <li><a href="/views/multi3.html">Multiplayer 3</a></li>
+                            <li><a href="/views/multi4.html">Multiplayer 4</a></li>
+                            <li><a href="/views/multi5.html">Multiplayer 5</a></li>
+                            <li><a href="/views/multi6.html">Multiplayer 6</a></li>
+                            <li><a href="/views/team4.html">Team 2v2</a></li>
+                            <li><a href="/views/team6.html">Team 3v3</a></li>
+                            <li><a href="/views/team8.html">Team 4v4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="arena">
+        <div id="arena">
+            <div class="container">
+            <div class="row">
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" id="player1name">
+                    </div>
+                    <div class="col-xs-2"><p>VS</p></div>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" id="player2name">
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-xs-4">
+                        <input type="number" min="0" inputmode="numeric" pattern="[0-9]*" step=".1" class="form-control" id="p1start">
+                    </div>
+                    <div class="col-xs-4"><p>Start</p></div>
+                    <div class="col-xs-4">
+                        <input type="number" min="0" inputmode="numeric" pattern="[0-9]*"  class="form-control" id="p2start">
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div id="goalp1"><p></p></div>
+                </div>
+                <div class="col-xs-4"><p>Goal</p></div>
+                <div class="col-xs-4">
+                    <div id="goalp2"><p></p></div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-xs-4">
+                        <input type="number" min="0" inputmode="numeric" pattern="[0-9]*"  class="form-control" id="p1finish">
+                    </div>
+                    <div class="col-xs-4"><p>Finish</p></div>
+                    <div class="col-xs-4">
+                        <input type="number" min="0" inputmode="numeric" pattern="[0-9]*"  class="form-control" id="p2finish">
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div id="p1diff"><p></p></div>
+                </div>
+                <div class="col-xs-4"><p>Margin</p></div>
+                <div class="col-xs-4">
+                    <div id="p2diff"><p></p></div>
+                </div>
+            </div>
+            <div class="button">
+                    <input type="button" value="Next Round" id="nextButton">
+            </div>
+         </div>   
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+            function ran_col() {
+                var color = '#';
+                var letters = ['FF0000','00FF00','0000FF','FFFF00','00FFFF','FF00FF','C0C0C0'];
+                color += letters[Math.floor(Math.random() * letters.length)];
+                document.getElementById('arena').style.background = color;
+            }
+    </script>
+    
+    
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
